@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{{ rando.name }}<br><br>
+
+{% if savedrandos == 0 or savedrandos == null %}
+
+<a href="#">
+
+<span class="material-icons">
+favorite_border
+</span> Sauvegarder
+
+</a>
+
+{% else %}
+
+<a href="#">
+
+<span class="material-icons">
+favorite
+</span> Randonnée sauvegardée
+
+</a>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'admin/adminbase.html.twig' %}
+
+{% block body %}
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <!-- Page Title Header Starts-->
+            <div class="row page-title-header">
+                <div class="col-12">
+                    <div class="page-header" style="display:flex;align-items:center;">
+                        {% if user.pdp != '' %}
+                            <img
+                                src="{{ user.pdp }}"
+                                style="height:60px; width:60px; border-radius:100px; margin:0 auto;">
+                        {% else %}
+                            <span
+                                class="img-sm rounded-circle text-white text-avatar"
+                                style="background-color:#D63F27; height:60px; width:70px; margin:0 auto;">{{ user.nom|first|upper}}{{ user.prenom|first|upper }}</span>
+                        {% endif %}
+                        <h4 class="page-title">&nbsp;{{ user.nom }}&nbsp;{{ user.prenom }}</h4>
+                        <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body d-flex flex-column">
+                            <div class="wrapper">
+                                <div class="mb-4" id="net-profit-legend" style="font-size:12px !important;">
+                                    {{ form(userform) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}

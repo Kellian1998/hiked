@@ -1,0 +1,30 @@
+{% extends 'admin/adminbase.html.twig' %}
+
+{% block body %}
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <!-- Page Title Header Starts-->
+            <div class="row page-title-header">
+                <div class="col-12">
+                    <div class="page-header">
+                        <h4 class="page-title">Modifier la randonnée</h4>
+                        <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body d-flex flex-column">
+                            <div class="wrapper">
+                                <h4 class="card-title mb-0">Ajouter une randonnée</h4>
+                                <div class="mb-4" id="net-profit-legend"></div>
+                            </div>
+                            {{ form(form) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+            {% endblock %}

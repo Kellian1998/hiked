@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RandosController!{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+
+<div class="row">
+
+<div class="col-12 d-flex flex-wrap justify-content-between">
+
+{% for rando in randos %}
+
+<div class="card mt-3" style="width: 18rem;">
+  <img src="{{ vich_uploader_asset(rando, 'imageFile') }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ rando.name }}</h5>
+    <p class="card-text">{{ rando.description|raw }}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><b>Difficulté :</b> {{ rando.difficulty }}</li>
+    <li class="list-group-item"><b>Zone :</b> {{ rando.zone }}</li>
+    <li class="list-group-item"><b>Type :</b> {{ rando.type }}</li>
+    <li class="list-group-item"><b>Milieu :</b> {{ rando.milieu }}</li>
+  </ul>
+  <div class="card-body">
+    <a href="{{ path('infos_rando', { 'id': rando.id }) }}" class="card-link">En savoir +</a>
+  </div>
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

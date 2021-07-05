@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            {% block title %}Hiked - ...
+            {% endblock %}
+        </title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+            <!-- Google font CDN -->
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link
+                href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+                rel="stylesheet">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <link
+                rel="stylesheet"
+                href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+                integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+                crossorigin="anonymous">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link
+                href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Paytone+One&display=swap"
+                rel="stylesheet">
+            <link
+                rel="stylesheet"
+                href="https://fonts.googleapis.com/icon?family=Material+Icons">
+            <link rel="stylesheet" href="{{ asset('style/style.css') }}">
+        {% endblock %}
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+        {% endblock %}
+    </head>
+    <body>
+        {#
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="{{ path('home') }}">HIKED</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    {% if is_granted('ROLE_ADMIN') %}
+        <li class="nav-item">
+        <a class="nav-link" href="{{ path('dashboard') }}"><b>Administration</b></a>
+      </li>
+        {% endif %}
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ path('home') }}">Accueil</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ path('randos') }}">Les randonnées</a>
+      </li>
+      {% if app.user == null %}
+      <li class="nav-item">
+        <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ path('app_register') }}">Inscription</a>
+      </li>
+      {% else %}
+      <li class="nav-item"><a class="nav-link" href="{{ path('profil') }}">Profil</a></li>
+        <li class="nav-item">
+        <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>#}
+        <div
+            class="toppage"
+            style="background:url( {{asset('images/' ~ pagename ~ '.png')}} ) no-repeat 0, 0 #4d4d4d73;">
+            <div class="container-fluid">
+                {# TOP INFOS #}
+                <div class="row">
+                    <div class="col-3 d-flex justify-content-around align-items-center">
+                        <img src="{{asset('images/small_logo.png')}}">
+                        <div class="d-flex align-items-center">
+                            <span class="material-icons">
+                                light_mode
+                            </span>&nbsp;
+                            <span style="color:white;">31°</span></div>
+                    </div>
+                    <div class="col-6"></div>
+                    <div class="col-3 d-flex justify-content-around align-items-center">
+                        <div class="d-flex align-items-center">
+                            <img src="{{asset('images/france.png')}}" style="height:30px">&nbsp;<span style="color:white;">FR</span>
+                        </div>
+                        <a href="{{ path('app_login') }}" class="d-flex align-items-center navspelink">
+                            <span class="material-icons" style="color:black">
+                                person
+                            </span>&nbsp;Connexion
+                        </a>
+                    </div>
+                </div>
+                {# NAVBAR #}
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-6 d-flex align-items-center justify-content-around navbar">
+                        <a href="#">accueil</a>
+                        <a href="{{ path('actualites') }}">actualités</a>
+                        <a href="#">à propos</a>
+                        <a href="#">contact</a>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+                {# LOGO + SEARCH #}
+                <div class="logosearch">
+                    <img src="{{asset('images/simple_logo.png')}}"><br>
+                    <h1>randonnée personalisée</h1><br>
+                    <form>
+                        <div class="form-group">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="formGroupExampleInput"
+                                placeholder="rechercher">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="bottom-toppage">
+                <a href="#">
+                    <div class="round">
+                        <span class="material-icons">
+                            arrow_downward
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% block body %}{% endblock %}
+        <footer>
+            <div class="container-fluid">
+                <div class="row">
+                    <div
+                        class="p-5 col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 d-flex flex-column justify-content-between"
+                        style="height:50vh;">
+                        <div class="footertitle">Contact</div>
+                        <div class="footerinfos">
+                        <p>contact@hiked.com</p>
+                        <p>06 92 97 49 74</p>
+                        <p>Avenue Georges Guillé, 11000 Carcassonne</p>
+                        </div>
+                        <div class="d-flex w-100 justify-content-between">
+                          <a href="#"><img src="{{asset('images/facebook.png')}}"></a>
+                          <a href="#"><img src="{{asset('images/instagram.png')}}"></a>
+                          <a href="#"><img src="{{asset('images/twitter.png')}}"></a>
+                          <a href="#"><img src="{{asset('images/pinterest.png')}}"></a>
+                        </div>
+                    </div>
+                    <div
+                        class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-center justify-content-center"
+                        style="height:50vh;">
+                        <img src="{{asset('images/simple_logo.png')}}">
+                    </div>
+                    <div
+                        class="p-5 col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 d-flex flex-column justify-content-between"
+                        style="height:50vh;">
+                        <div class="footertitle">Informations</div>
+                        <div class="footerinfos">
+                        <p><a href="#">Mentions légales</a></p>
+                        <p><a href="#">Politique de confidentialité</a></p>
+                        <p><a href="#">CGU</a></p>
+                        <p><a href="#">Sitemap</a></p>
+                        </div>
+                        <div></div><div></div>
+                    </div>
+                    <div class="col-12 text-center" style="color:white;height:5vh;">Copyright &copy; {{ "now"|date("Y") }} Hiked. Tous droits réservés.</div>
+                </div>
+            </div>
+        </footer>
+        <script src="script/script.js"></script>
+    </body>
+</html>

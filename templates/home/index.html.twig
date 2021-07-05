@@ -1,0 +1,200 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div
+        class="part d-flex flex-column align-items-center"
+        style="background-color:#F6ECC9">
+        <div class="title" style="color: #2C2B2B;">
+            Ile de la Réunion</div>
+
+        <div class="map">
+
+            <div id="nord" class="maptxt d-flex align-items-center justify-content-center">
+                <a href="#">nord</a>
+            </div>
+            <div id="est" class="maptxt d-flex align-items-center justify-content-center">
+                <a href="#">est</a>
+            </div>
+            <div id="sud" class="maptxt d-flex align-items-center justify-content-center">
+                <a href="#">sud</a>
+            </div>
+            <div id="ouest" class="maptxt d-flex align-items-center justify-content-left">
+                <a href="#">ouest</a>
+            </div>
+
+        </div>
+        <div class="bottom-page"><img src="{{asset('images/small_logo.png')}}"></div>
+    </div>
+
+    <div class="part" style="background-color: #BC2F23;">
+        <div class="titlebloc w-100 d-flex justify-content-between">
+            <div>Le Nord</div>
+            <div></div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div
+                    class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center align-items-center"
+                    style="height:75vh;">
+                    <img src="{{asset('images/lot1.png')}}" style="height:630px">
+                </div>
+                <div
+                    class="pl-5 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 pagetxt d-flex flex-column justify-content-between">
+                    <p>La région Nord de La Réunion se situe entre la Grande Chaloupe à l’Ouest et
+                        la rivière Sainte-Suzanne à l’Est et elle s’étend jusqu’à la Plaine des Fougères
+                        et la Roche Ecrite à 2200 mètres d’altitude.</p>
+                    <p>Terre de sensations et d'expériences intenses, découvrez les régions de la
+                        Réunion lors de votre prochain voyage. Arpentez les rues de Saint-Denis, le
+                        chef-lieu de l'île et admirez l'architecture créole des bâtisses et monuments.
+                    </p>
+                    <p>Optez pour une visite d'une des villes principales du Nord où vous pourrez en
+                        apprendre plus sur la culture réunionnaise.</p>
+                    <p>Côté nature, de très belles randonnées vous attendent au cœur des paysages
+                        fantastiques de l'île. Plusieurs randonées à la Réunion permettent de découvrir
+                        le Nord de cette île de l'Océan Indien.</p>
+                    <div class="d-flex justify-content-end w-100">
+                        <a href="#">
+                            <div
+                                class="boutton pull-right d-flex align-items-center justify-content-around">Voir plus
+                                <span class="material-icons">
+                                    east
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div
+        class="part"
+        style="background:url({{asset('images/image16.png')}}) no-repeat 0, 0 #4d4d4d73;">
+
+        <div class="titlebloc w-100 d-flex justify-content-end">
+            <div>Le Sud</div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div
+                    class="pl-5 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 pagetxt d-flex flex-column justify-content-between">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in orci nec
+                        tellus lobortis suscipit quis efficitur eros. Curabitur sagittis sapien in felis
+                        commodo, vel posuere magna . Lorem ipsum dolor sit amet, consectetur adipiscing<br><br>
+                        elit. Sed in orci nec tellus lobortis suscipit quis efficitur eros. Curabitur
+                        sagittis sapien in felis commodo, vel posuere magna .
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in orci nec
+                        tellus lobortis suscipit quis efficitur eros. Curabitur sagittis sapien in felis
+                        commodo, vel posuere magna .
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in orci nec
+                        tellus lobortis suscipit .
+                    </p>
+                    <a href="#">
+                        <div
+                            class="boutton pull-right d-flex align-items-center justify-content-around">Voir plus
+                            <span class="material-icons">
+                                east
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div
+                    class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center align-items-center">...</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="part">
+        <div class="titlebloc w-100 d-flex justify-content-start" style="color:#202020">
+            <div>L'Ouest</div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div
+                    class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center align-items-center"
+                    style="height:75vh;">
+                    <img src="{{asset('images/lot2.png')}}" style="height:570px">
+                </div>
+                <div
+                    class="pl-5 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 pagetxt d-flex flex-column justify-content-between"
+                    style="color:black">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in orci nec
+                        tellus lobortis suscipit quis efficitur eros. Curabitur sagittis sapien in felis
+                        commodo, vel posuere magna . Lorem ipsum dolor sit amet, consectetur adipiscing
+                    </p>
+                    <p>
+                        elit. Sed in orci nec tellus lobortis suscipit quis efficitur eros. Curabitur
+                        sagittis sapien in felis commodo, vel posuere magna elit. Sed in orci<br>lobortis
+                            suscipit quis efficitur eros. Curabitur sagittis sapien in felis commodo, vel
+                            posuere magna.
+                    </p>
+                    <p>elit. Sed in orci nec tellus lobortis suscipit quis efficitur eros. Curabitur
+                        sagittis sapien in felis commodo, vel posuere magna .
+                    </p>
+                    <div class="d-flex justify-content-end w-100">
+                        <a href="#">
+                            <div
+                                class="boutton pull-right d-flex align-items-center justify-content-around"
+                                style="color:black;border-color:black;">Voir plus
+                                <span class="material-icons">
+                                    east
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div
+        class="part"
+        style="background:url({{asset('images/image19.png')}}) no-repeat 0, 0 #4d4d4d73;">
+        <div class="titlebloc w-100 d-flex justify-content-end">
+            <div>L'Est</div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 pagetxt">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in orci nec
+                        tellus lobortis suscipit quis efficitur eros. Curabitur sagittis<br>sapien
+                        in felis commodo, vel posuere magna .rem ipsum dolor sit amet, consectetur
+                        adipiscing
+                    </p>
+                    <p>
+                        elit. Sed in orci nec tellus lobortis suscipit quis efficitur eros. Curabitur
+                        sagittis sapien in felis commodo, vel posuere magna .
+                    </p>
+                    <p>suscipit quis efficitur eros. Curabitur sagittis sapien in felis commodo, vel
+                        posuere magna .
+                    </p>
+                </div>
+                <div class="pl-5 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 pagetxt">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in orci nec tellus
+                        lobortis suscipit quis<br>efficitur eros. Curabitur sagittis sapien in felis commodo, vel posuere magna.<br>Lorem ipsum dolor sit amet, consectetur adipiscing
+                    </p>
+                    <p>
+                        elit. Sed in orci nec tellus lobortis suscipit quis efficitur eros. Curabitur
+                        sagittis sapien in felis commodo, vel posuere magna .
+                    </p>
+                </div>
+                <div class="col-12 mt-5 d-flex justify-content-center">
+                    <a href="#">
+                        <div
+                            class="boutton pull-right d-flex align-items-center justify-content-around">Voir plus
+                            <span class="material-icons">
+                                east
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

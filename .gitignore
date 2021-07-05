@@ -1,0 +1,59 @@
+
+###> symfony/framework-bundle ###
+.env.backup
+.env
+/.env
+/.env.php
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+/homebrew/
+
+.idea/workspace.xml
+/.idea/
+composer.lock
+symfony.lock
+/public/upload/
+/public/packages/
+#/public/images/
+/public/images/dl
+/public/images/games
+/upload
+/public/cache/
+/public/tmp/
+#/src/Migrations/
+/upload/
+/migrations/
+/.vs
+/migrations
+/src/Migrations
+
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+.idea/
+
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+##/public/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###
+
+###> symfony/web-server-bundle ###
+/.web-server-pid
+###< symfony/web-server-bundle ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
