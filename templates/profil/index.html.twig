@@ -1,7 +1,58 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseother.html.twig' %}
 
 {% block title %}Hello ProfilController!{% endblock %}
 
 {% block body %}
-...
+
+{% if app.user.pdp != '' %}
+            <img class="mt-5"
+                src="{{ app.user.pdp }}"
+                style="height:60px; width:60px; border-radius:100px; margin:0 auto;">
+        {% else %}
+            <div class="roundedimg mt-5">{{ app.user.nom|first|upper}}{{ app.user.prenom|first|upper }}</div>
+        {% endif %}
+        <div class="usernamebloc">
+            {{ app.user.nom }}
+            {{ app.user.prenom }}
+        </div>
+
+    <div class="mt-5 ml-5" style="color:white;">
+
+        <p class="d-flex align-items-center">
+            <span class="material-icons">
+                email
+            </span>&nbsp;{{ app.user.email }}
+        </p>
+        <p class="d-flex align-items-center">
+            <span class="material-icons">
+                call
+            </span>&nbsp;{{ app.user.tel }}
+        </p>
+        <p class="d-flex align-items-center">
+            <span class="material-icons">
+                person
+            </span>&nbsp;{{ app.user.age }}
+            ans
+        </p>
+        <p class="d-flex align-items-center">
+            <span class="material-icons">
+                public
+            </span>&nbsp;{% if app.user.pays == 'FR' %}France{% elseif app.user.pays == 'EN' %}Angleterre{% endif %}
+        </p>
+        <br>
+        <h3>Mes randonnées sauvegardées</h3>
+        <ul>
+            {% for rando in savedrandos %}
+                <li>
+                    <a href="#">{{ rando.randoId.name }}</a>
+                    |
+                    <a href="#">
+                        <u>Exporter la feuille de route</u>
+                    </a>
+                    |
+                    <a href="#" style="color:red;">X</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}

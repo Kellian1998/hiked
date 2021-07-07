@@ -3,19 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <title>
-            {% block title %}{% endblock %}
+            {% block title %}
+            {% endblock %}
         </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
             <!-- Google font CDN -->
-            <link rel="icon" type="image/png" href="{{ asset('images/small_logo.png') }}" />
             <link rel="preconnect" href="https://fonts.gstatic.com">
             <link
                 href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
                 rel="stylesheet">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
             <link
                 rel="stylesheet"
                 href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -44,6 +43,11 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+    {% if is_granted('ROLE_ADMIN') %}
+        <li class="nav-item">
+        <a class="nav-link" href="{{ path('dashboard') }}"><b>Administration</b></a>
+      </li>
+        {% endif %}
       <li class="nav-item active">
         <a class="nav-link" href="{{ path('home') }}">Accueil</a>
       </li>
@@ -67,8 +71,8 @@
   </div>
 </nav>#}
         <div
-            class="toppage laptop"
-            style="background:url( {{asset('images/' ~ pagename ~ '.png')}} ) no-repeat 0, 0 #4d4d4d73;">
+            class="toppagearticle"
+            style="background:url( {{asset('uploads/images/' ~ article.header ~ '')}} ) no-repeat 0, 0 #4d4d4d73;">
             <div class="container-fluid">
                 {# TOP INFOS #}
                 <div class="row">
@@ -92,7 +96,7 @@
                             </span>&nbsp;Connexion
                         </a>
                         {% else %}
-                        <a href="{{ path('profil') }}" class="d-flex align-items-center navspelink">
+                        <a href="{{ path('app_login') }}" class="d-flex align-items-center navspelink">
                             <span class="material-icons" style="color:black">
                                 person
                             </span>&nbsp;Profil
@@ -115,24 +119,10 @@
                     <div class="col-3"></div>
                 </div>
                 {# LOGO + SEARCH #}
-                <div class="logosearch">
-                    <img src="{{asset('images/simple_logo.png')}}"><br>
-                    <h1>randonnée personnalisée</h1><br>
-                    <a href="{{ path('filter') }}"><div class="searchbtn">RECHERCHER</div></a>
-                </div>
             </div>
-            <div class="bottom-toppage">
-                <a href="#partone">
-                    <div class="round">
-                        <span class="material-icons">
-                            arrow_downward
-                        </span>
-                    </div>
-                </a>
-            </div>
+            {% block body %}{% endblock %}
         </div>
-        {% block body %}{% endblock %}
-        <footer class="laptop">
+        <footer>
             <div class="container-fluid">
                 <div class="row">
                     <div
@@ -140,15 +130,15 @@
                         style="height:50vh;">
                         <div class="footertitle">Contact</div>
                         <div class="footerinfos">
-                            <p>contact@hiked.com</p>
-                            <p>06 92 97 49 74</p>
-                            <p>Avenue Georges Guillé, 11000 Carcassonne</p>
+                        <p>contact@hiked.com</p>
+                        <p>06 92 97 49 74</p>
+                        <p>Avenue Georges Guillé, 11000 Carcassonne</p>
                         </div>
                         <div class="d-flex w-100 justify-content-between">
-                            <a href="#"><img src="{{asset('images/facebook.png')}}"></a>
-                            <a href="#"><img src="{{asset('images/instagram.png')}}"></a>
-                            <a href="#"><img src="{{asset('images/twitter.png')}}"></a>
-                            <a href="#"><img src="{{asset('images/pinterest.png')}}"></a>
+                          <a href="#"><img src="{{asset('images/facebook.png')}}"></a>
+                          <a href="#"><img src="{{asset('images/instagram.png')}}"></a>
+                          <a href="#"><img src="{{asset('images/twitter.png')}}"></a>
+                          <a href="#"><img src="{{asset('images/pinterest.png')}}"></a>
                         </div>
                     </div>
                     <div
@@ -161,19 +151,12 @@
                         style="height:50vh;">
                         <div class="footertitle">Informations</div>
                         <div class="footerinfos">
-                            <p>
-                                <a href="{{ path('mentionslegales') }}">Mentions légales et CGU</a>
-                            </p>
-                            <p>
-                                <a href="{{ path('politique_confidentialite') }}">Politique de confidentialité</a>
-                            </p>
+                        <p><a href="{{ path('mentionslegales') }}">Mentions légales et CGU</a></p>
+                        <p><a href="{{ path('politique_confidentialite') }}">Politique de confidentialité</a></p>
                         </div>
-                        <div></div>
-                        <div></div>
+                        <div></div><div></div>
                     </div>
-                    <div class="col-12 text-center" style="color:white;height:5vh;">Copyright &copy;
-                        {{ "now"|date("Y") }}
-                        Hiked. Tous droits réservés.</div>
+                    <div class="col-12 text-center" style="color:white;height:5vh;">Copyright &copy; {{ "now"|date("Y") }} Hiked. Tous droits réservés.</div>
                 </div>
             </div>
         </footer>

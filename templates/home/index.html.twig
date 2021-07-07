@@ -1,8 +1,11 @@
 {% extends 'base.html.twig' %}
+{% block title %}Hiked - Accueil
+{% endblock %}
+
 
 {% block body %}
     <div
-        class="part d-flex flex-column align-items-center"
+        class="part d-flex flex-column align-items-center laptop" id="partone"
         style="background-color:#F6ECC9">
         <div class="title" style="color: #2C2B2B;">
             Ile de la Réunion</div>
@@ -10,23 +13,23 @@
         <div class="map">
 
             <div id="nord" class="maptxt d-flex align-items-center justify-content-center">
-                <a href="#">nord</a>
+                <a href="{{ path('nord_rando') }}">nord</a>
             </div>
             <div id="est" class="maptxt d-flex align-items-center justify-content-center">
-                <a href="#">est</a>
+                <a href="{{ path('est_rando') }}">est</a>
             </div>
             <div id="sud" class="maptxt d-flex align-items-center justify-content-center">
-                <a href="#">sud</a>
+                <a href="{{ path('sud_rando') }}">sud</a>
             </div>
             <div id="ouest" class="maptxt d-flex align-items-center justify-content-left">
-                <a href="#">ouest</a>
+                <a href="{{ path('ouest_rando') }}">ouest</a>
             </div>
 
         </div>
         <div class="bottom-page"><img src="{{asset('images/small_logo.png')}}"></div>
     </div>
 
-    <div class="part" style="background-color: #BC2F23;">
+    <div class="part laptop" style="background-color: #BC2F23;">
         <div class="titlebloc w-100 d-flex justify-content-between">
             <div>Le Nord</div>
             <div></div>
@@ -53,7 +56,7 @@
                         fantastiques de l'île. Plusieurs randonées à la Réunion permettent de découvrir
                         le Nord de cette île de l'Océan Indien.</p>
                     <div class="d-flex justify-content-end w-100">
-                        <a href="#">
+                        <a href="{{ path('nord_rando') }}">
                             <div
                                 class="boutton pull-right d-flex align-items-center justify-content-around">Voir plus
                                 <span class="material-icons">
@@ -68,7 +71,7 @@
     </div>
 
     <div
-        class="part"
+        class="part laptop"
         style="background:url({{asset('images/image16.png')}}) no-repeat 0, 0 #4d4d4d73;">
 
         <div class="titlebloc w-100 d-flex justify-content-end">
@@ -79,20 +82,13 @@
             <div class="row">
                 <div
                     class="pl-5 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 pagetxt d-flex flex-column justify-content-between">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in orci nec
-                        tellus lobortis suscipit quis efficitur eros. Curabitur sagittis sapien in felis
-                        commodo, vel posuere magna . Lorem ipsum dolor sit amet, consectetur adipiscing<br><br>
-                        elit. Sed in orci nec tellus lobortis suscipit quis efficitur eros. Curabitur
-                        sagittis sapien in felis commodo, vel posuere magna .
+                    <p>La région Sud de La Réunion forme le plus grand territoire de l’île, elle s’étend entre les Avirons à l’Est et Saint-Philippe au Sud-Est et grimpe jusqu’à la Plaine des Cafres qui la sépare de la Plaine des Palmistes à l’Est. Découvrir le Sud, c’est aimer son art de vivre et son accueil chaleureux.
                     </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in orci nec
-                        tellus lobortis suscipit quis efficitur eros. Curabitur sagittis sapien in felis
-                        commodo, vel posuere magna .
+                    <p>C’est s’émouvoir devant les panoramas renversants et un riche patrimoine. On pourra retrouver : volcan fascinant, cirque spectaculaire, et côtes sauvages sublimes parfaite pour pratiquer la randonnée… 
                     </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in orci nec
-                        tellus lobortis suscipit .
+                    <p>Le Sud est un concentré de Réunion qui bouleverse les sens! Goûtez à un voyage inoubliable dans le sud de L’île de la Réunion!
                     </p>
-                    <a href="#">
+                    <a href="{{ path('sud_rando') }}">
                         <div
                             class="boutton pull-right d-flex align-items-center justify-content-around">Voir plus
                             <span class="material-icons">
@@ -108,7 +104,9 @@
 
     </div>
 
-    <div class="part">
+    <div
+        class="part laptop"
+        style="background:url({{asset('images/image15.png')}})">
         <div class="titlebloc w-100 d-flex justify-content-start" style="color:#202020">
             <div>L'Ouest</div>
         </div>
@@ -122,21 +120,16 @@
                 <div
                     class="pl-5 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 pagetxt d-flex flex-column justify-content-between"
                     style="color:black">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in orci nec
-                        tellus lobortis suscipit quis efficitur eros. Curabitur sagittis sapien in felis
-                        commodo, vel posuere magna . Lorem ipsum dolor sit amet, consectetur adipiscing
+                    <p>L'Ouest de La Réunion, de La Possession à Saint-Leu en passant par Saint-Gilles et Mafate, vous donne rendez-vous avec des paysages époustouflants et diversifiés, du sommet des montagnes au battant des lames. C'est sur ce territoire que se concentre la majeure partie des hébergements et des loisirs de l'île de La Réunion.
                     </p>
                     <p>
-                        elit. Sed in orci nec tellus lobortis suscipit quis efficitur eros. Curabitur
-                        sagittis sapien in felis commodo, vel posuere magna elit. Sed in orci<br>lobortis
-                            suscipit quis efficitur eros. Curabitur sagittis sapien in felis commodo, vel
-                            posuere magna.
+                        Les amoureux de la randonnée se retrouveront pour un séjour hors du temps dans le cirque de Mafate, au coeur du Parc national, inscrit au Patrimoine mondial de l'Unesco.
                     </p>
-                    <p>elit. Sed in orci nec tellus lobortis suscipit quis efficitur eros. Curabitur
-                        sagittis sapien in felis commodo, vel posuere magna .
+                    <p>Les contemplatifs seront eux émerveillés par les points de vue, entre soleil et brume, qu'offrent les "Hauts"  de l'Ouest, dont le Maïdo est un des joyaux.
+                    L'Ouest est tout cela à la fois. À vous d'en profiter un maximum pour des randonnées intense sur notre belle ile de La Réunion.
                     </p>
                     <div class="d-flex justify-content-end w-100">
-                        <a href="#">
+                        <a href="{{ path('ouest_rando') }}">
                             <div
                                 class="boutton pull-right d-flex align-items-center justify-content-around"
                                 style="color:black;border-color:black;">Voir plus
@@ -152,7 +145,7 @@
     </div>
 
     <div
-        class="part"
+        class="part laptop"
         style="background:url({{asset('images/image19.png')}}) no-repeat 0, 0 #4d4d4d73;">
         <div class="titlebloc w-100 d-flex justify-content-end">
             <div>L'Est</div>
@@ -160,14 +153,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 pagetxt">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in orci nec
-                        tellus lobortis suscipit quis efficitur eros. Curabitur sagittis<br>sapien
-                        in felis commodo, vel posuere magna .rem ipsum dolor sit amet, consectetur
-                        adipiscing
+                    <p>L’Est de La Réunion est une terre d’exception ! Découvrez ou redécouvrez à votre tour ce territoire aux richesses innombrables. Nature, aventures découverte et culture sont au rendez-vous, pour vous offrir des moments inoubliables dans notre belle région est !
                     </p>
                     <p>
-                        elit. Sed in orci nec tellus lobortis suscipit quis efficitur eros. Curabitur
-                        sagittis sapien in felis commodo, vel posuere magna .
+                        L’Est de l’île est le parfait reflet de la biodiversité qu’abrite La Réunion.
+L’abondance en eau que connait cette partie de l’île a permis de façonner ses paysages incroyables.
                     </p>
                     <p>suscipit quis efficitur eros. Curabitur sagittis sapien in felis commodo, vel
                         posuere magna .
@@ -175,16 +165,14 @@
                 </div>
                 <div class="pl-5 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 pagetxt">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in orci nec tellus
-                        lobortis suscipit quis<br>efficitur eros. Curabitur sagittis sapien in felis commodo, vel posuere magna.<br>Lorem ipsum dolor sit amet, consectetur adipiscing
+                        Venez admirer cette luxuriante nature qui subliment les panoramas au fil des saisons. Plongez dans l’un des nombreux bassins de la région à travers nos randonnées personnalisées.
                     </p>
                     <p>
-                        elit. Sed in orci nec tellus lobortis suscipit quis efficitur eros. Curabitur
-                        sagittis sapien in felis commodo, vel posuere magna .
+                        La nature reste exubérante malgré les efforts pour en tirer le meilleur parti (culture de la canne, de la vanille…) : cascades, bassins, forêts primaires…
                     </p>
                 </div>
                 <div class="col-12 mt-5 d-flex justify-content-center">
-                    <a href="#">
+                    <a href="{{ path('est_rando') }}">
                         <div
                             class="boutton pull-right d-flex align-items-center justify-content-around">Voir plus
                             <span class="material-icons">
@@ -196,5 +184,202 @@
             </div>
         </div>
     </div>
+
+    {# mobile screen #}
+    {##}
+    <div class="mobile">
+
+        <div
+            class="partmobile mobile"
+            style="background:url({{asset('images/accueil.png')}})  no-repeat 0, 0 #4d4d4d73;">
+
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-6 pt-3">
+
+                        <img src="{{asset('images/small_logo.png')}}">
+
+                    </div>
+
+                    <div class="col-6 pt-3 d-flex justify-content-end">
+
+                        <div class="d-flex align-items-center">
+                            <span class="material-icons">
+                                light_mode
+                            </span>&nbsp;
+                            <span style="color:white;">31°</span></div>
+                        &nbsp; &nbsp;
+                        <div class="d-flex align-items-center">
+                            <img src="{{asset('images/france.png')}}" style="height:30px">&nbsp;<span style="color:white;">FR</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="logosearch">
+                <img src="{{asset('images/simple_logo.png')}}"><br>
+                <h1>randonnée personalisée</h1><br>
+                <form>
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="formGroupExampleInput"
+                            placeholder="rechercher">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="partmobilemap pb-5 mobile" style="background-color:#F6ECC9">
+        <h1 class="pt-4" style="color:black;">Île de la réunion</h1><br>
+        <div class="mobilemap">
+        <div class="container-fluid">
+        <div class="row">
+        <div class="col-12 text-center" style="height:18vh; color:white;"><a href="#">Le Nord</a></div>
+        <div class="col-6 text-center" style="height:18vh; color:white;"><a href="#">L'Ouest</a></div>
+        <div class="col-6 text-center" style="height:18vh; color:white;"><a href="#">L'Est</a></div>
+        <div class="col-12 text-center" style="height:18vh; color:white;"><a href="#">Le Sud</a></div>
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <div
+        class="partmobile d-flex flex-column align-items-center p-4 mobile"
+        style="background-color:#BC2F24">
+        <h1>Le Nord</h1><br>
+        <img src="{{asset('images/lot1.png')}}" style="height:300px">
+        <p style="color:white;text-align:justify;margin-top:20px;">La région Nord de La
+            Réunion se situe entre la Grande Chaloupe à l’Ouest et la rivière Sainte-Suzanne
+            à l’Est et elle s’étend jusqu’à la Plaine des Fougères et la Roche Ecrite à 2200
+            mètres d’altitude.</p>
+
+        <p style="color:white;text-align:justify;margin-top:20px;">Terre de sensations
+            et d'expériences intenses, découvrez les régions de la Réunion lors de votre
+            prochain voyage. Arpentez les rues de Saint-Denis, le chef-lieu de l'île et
+            admirez l'architecture créole des bâtisses et monuments. Optez pour une visite
+            d'une des villes principales du Nord où vous pourrez en apprendre plus sur la
+            culture réunionnaise.</p>
+
+        <p style="color:white;text-align:justify;margin-top:20px;">Côté nature, de très
+            belles randonnées vous attendent au cœur des paysages fantastiques de l'île.
+            Plusieurs randonées à la Réunion permettent de découvrir le Nord de cette île de
+            l'Océan Indien.</p>
+
+    </div>
+
+    <div
+        class="partmobile d-flex flex-column align-items-center p-4 mobile"
+        style="background:url({{asset('images/image16.png')}})  no-repeat 0, 0 #4d4d4d73;">
+        <h1>Le Sud</h1><br>
+        <p style="color:white;text-align:justify;margin-top:20px;">La région Sud de La
+            Réunion forme le plus grand territoire de l’île, elle s’étend entre les Avirons
+            à l’Est et Saint-Philippe au Sud-Est et grimpe jusqu’à la Plaine des Cafres qui
+            la sépare de la Plaine des Palmistes à l’Est. Découvrir le Sud, c’est aimer son
+            art de vivre et son accueil chaleureux. C’est s’émouvoir devant les panoramas
+            renversants et un riche patrimoine. On pourra retrouver : volcan fascinant,
+            cirque spectaculaire, et côtes sauvages sublimes parfaite pour pratiquer la
+            randonnée…
+        </p>
+
+        <p style="color:white;text-align:justify;margin-top:20px;">Le Sud est un
+            concentré de Réunion qui bouleverse les sens! Goûtez à un voyage inoubliable
+            dans le sud de L’île de la Réunion!</p>
+
+    </div>
+
+    <div
+        class="partmobile d-flex flex-column align-items-center p-4 mobile"
+        style="background-image:url({{asset('images/image15.png')}})">
+        <h1 style="color:black">L'Ouest</h1>
+        <br>
+        <img src="{{asset('images/lot2.png')}}" style="height:270px">
+        <p style="color:black;text-align:justify;margin-top:20px;">L'Ouest de La
+            Réunion, de La Possession à Saint-Leu en passant par Saint-Gilles et Mafate,
+            vous donne rendez-vous avec des paysages époustouflants et diversifiés, du
+            sommet des montagnes au battant des lames. C'est sur ce territoire que se
+            concentre la majeure partie des hébergements et des loisirs de l'île de La
+            Réunion.
+        </p>
+
+        <p style="color:black;text-align:justify;margin-top:20px;">Les amoureux de la
+            randonnée se retrouveront pour un séjour hors du temps dans le cirque de Mafate,
+            au coeur du Parc national, inscrit au Patrimoine mondial de l'Unesco.</p>
+
+        <p style="color:black;text-align:justify;margin-top:20px;">Les contemplatifs
+            seront eux émerveillés par les points de vue, entre soleil et brume, qu'offrent
+            les "Hauts" de l'Ouest, dont le Maïdo est un des joyaux.</p>
+
+        <p style="color:black;text-align:justify;margin-top:20px;">L'Ouest est tout cela
+            à la fois. À vous d'en profiter un maximum pour des randonnées intense sur notre
+            belle ile de La Réunion.</p>
+
+    </div>
+
+    <div
+        class="partmobile d-flex flex-column align-items-center p-4 mobile"
+        style="background-image:url({{asset('images/image19.png')}})">
+        <h1>L'Est</h1>
+        <br>
+        <p style="color:white;text-align:justify;margin-top:20px;">L’Est de La Réunion
+            est une terre d’exception ! Découvrez ou redécouvrez à votre tour ce territoire
+            aux richesses innombrables. Nature, aventures découverte et culture sont au
+            rendez-vous, pour vous offrir des moments inoubliables dans notre belle région
+            est !
+        </p>
+
+        <p style="color:white;text-align:justify;margin-top:20px;">L’Est de l’île est le
+            parfait reflet de la biodiversité qu’abrite La Réunion. L’abondance en eau que
+            connait cette partie de l’île a permis de façonner ses paysages incroyables.</p>
+
+        <p style="color:white;text-align:justify;margin-top:20px;">Venez admirer cette
+            luxuriante nature qui subliment les panoramas au fil des saisons. Plongez dans
+            l’un des nombreux bassins de la région à travers nos randonnées personnalisées.</p>
+
+        <p style="color:white;text-align:justify;margin-top:20px;">La nature reste
+            exubérante malgré les efforts pour en tirer le meilleur parti (culture de la
+            canne, de la vanille…) : cascades, bassins, forêts primaires…</p>
+
+    </div>
+
+    <div class="mobilefooter mobile">
+                                <p>
+                                <a href="#">Mentions légales</a>
+                            </p>
+                            <p>
+                                <a href="#">Politique de confidentialité</a>
+                            </p>
+                            <p>
+                                <a href="#">CGU</a>
+                            </p>
+                            <img src="{{asset('images/simple_logo.png')}}">
+                            <div class="d-flex w-75 mt-4 justify-content-between">
+                            <a href="#"><img src="{{asset('images/facebook.png')}}"></a>
+                            <a href="#"><img src="{{asset('images/instagram.png')}}"></a>
+                            <a href="#"><img src="{{asset('images/twitter.png')}}"></a>
+                            <a href="#"><img src="{{asset('images/pinterest.png')}}"></a>
+                        </div>
+                        <div class="mt-4">
+                        Copyright &copy;
+                        {{ "now"|date("Y") }}
+                        Hiked. Tous droits réservés.
+                        </div>
+    </div>
+
+    <div class="mobilenavbar mobile">
+        <a href="#"><img src="{{asset('images/accueilmobile.png')}}"></a>
+        <a href="#"><img src="{{asset('images/actumobile.png')}}"></a>
+        <a href="#"><img src="{{asset('images/aproposmobile.png')}}"></a>
+        <a href="#"><img src="{{asset('images/contactmobile.png')}}"></a>
+        <a href="#"><img src="{{asset('images/profilemobile.png')}}"></a>
+    </div>
+</div>
 
 {% endblock %}

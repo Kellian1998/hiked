@@ -1,0 +1,43 @@
+{% extends 'baseother.html.twig' %}
+
+{% block title %}Hiked - les randonnées de l'Est{% endblock %}
+
+{% block body %}
+    <div class="mt-5 ml-5" style="color:white;">
+        <h1>Les randonnées de l'Est</h1>
+        <div class="container-fluid">
+            <div class="row">
+            {% if randos != null %}
+                {% for rando in randos %}
+                    <div class=="col-3 d-flex justify-content-center">
+                        <a href="#">
+                            <div
+                                class="randobloc m-5 d-flex flex-column justify-content-center align-items-center"
+                                style='background-image:url({{asset('uploads/images/' ~ rando.photo ~ '')}})'>
+                                <h2>{{ rando.name }}</h2>
+                                 <p class="d-flex align-items-center">
+                                    <span class="material-icons">
+                                        <span class="material-icons">
+                                        signal_cellular_alt
+                                        </span>
+                                    </span>&nbsp;{{ rando.difficulty }}
+                                </p>
+                                <p class="d-flex align-items-center">
+                                    <span class="material-icons">
+                                        <span class="material-icons">
+                                        landscape
+                                        </span>
+                                    </span>&nbsp;{{ rando.milieu }}
+                                </p>
+                            <p><a href="#">Sauvegarder la randonnée</a></p>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+                {% else %}
+                <h2 class="mt-5">Désolé, aucune randonnée est disponible pour le moment !</h2>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'articlebase.html.twig' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block body %}
+<div class="articletitlepart">
+        <h1>{{ article.title }}</h1>
+        {{ article.author.nom }} {{ article.author.prenom }} | {{ article.date }} | {% if article.category == null %} Sans catégorie {% else %}{{ article.category }}{% endif %}
+</div>
+<div class="artcontent" style="background-color:white;">
+{{ article.content|raw }}
+</div>
+{% endblock %}

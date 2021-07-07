@@ -13,18 +13,72 @@
             <div class="blocred">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="p-2 col-4">
-                        <img src="{{asset('images/image28.png')}}" style="width: 100%;height: 601px;">
+                        <div class="p-2 col-6">
+                            <img src="{{asset('images/image28.png')}}" style="width: 100%;height: 601px;">
                         </div>
-                        <div class="col-8 p-0">
+                        <div class="col-6 p-0">
                             <div class="container-fluid">
                                 <div class="row">
-                                    <div class="pl-0 pt-2 col-8"><img src="{{asset('images/image25.png')}}" style="height:400px"></div>
-                                    <div class="col-4">...</div>
-                                    <div class="col-12">...</div>
+                                    <div class="pl-0 pt-2 col-8 pr-0"><img src="{{asset('images/image25.png')}}" style="height:400px;"></div>
+                                    <div class="pl-0 pt-2 col-4"><img src="{{asset('images/image26.png')}}" style="height:400px;width:100%"></div>
+                                    <div class="pt-2 pr-2 pl-0 col-12"><img src="{{asset('images/image27.png')}}" style="height:195px;width:100%"></div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="part" style="background-color: #BC2F23;">
+        <div class="titlebloc w-100 d-flex justify-content-between mb-5">
+            <div>Le Blog</div>
+            <div></div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                {% for blog in allblogs %}
+                    <div class="col-4 d-flex justify-content-center">
+                        <div class="blocblog d-flex flex-column align-items-center pt-3">
+                            <div
+                                class="artimg"
+                                style="background-image:url({{asset('uploads/images/' ~ blog.header ~ '')}})"></div>
+                            <div class="blogtitle">{{ blog.title }}</div>
+                            <div class="blogcontentpres">{{ blog.content|u.truncate(300)|raw }}...</div>
+                            <a href="{{ path('read_blog', {slug: blog.slug}) }}"><div class="readmoreblog">Lire la suite</div></a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="part" style="background:url({{asset('images/image15.png')}})">
+
+        <div class="titlebloc w-100 d-flex justify-content-end" style="color:black">
+            <div>Magazines</div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-4 d-flex justify-content-center">
+                    <div
+                        class="magbloc d-flex align-items-end justify-content-center"
+                        style="background-image:url({{asset('images/mag1.png')}})">
+                        <div class="readmag mb-2">Vois plus</div>
+                    </div>
+                </div>
+                <div class="col-4 d-flex justify-content-center">
+                    <div
+                        class="magbloc d-flex align-items-end justify-content-center"
+                        style="background-image:url({{asset('images/mag2.png')}})">
+                        <div class="readmag mb-2">Vois plus</div>
+                    </div>
+                </div>
+                <div class="col-4 d-flex justify-content-center">
+                    <div
+                        class="magbloc d-flex align-items-end justify-content-center"
+                        style="background-image:url({{asset('images/mag3.png')}})">
+                        <div class="readmag mb-2">Vois plus</div>
                     </div>
                 </div>
             </div>
